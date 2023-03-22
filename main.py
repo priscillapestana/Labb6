@@ -7,8 +7,10 @@ def encode(password):
 
 # partner will complete
 def decode(encoded_password):
-    pass
-
+    original_password = ''
+    for num in encoded_password:
+        original_password += str((int(num) - 3) % 10)
+    return original_password
 # main function, prints menu, runs encode
 def main():
     while True:
@@ -29,7 +31,7 @@ def main():
 
         elif option == 2: # runs decode()
             original_password = decode(encoded_password)
-            print(f'The encoded password is {encoded_password}, and the original password is {original_password}')
+            print(f'The encoded password is {encoded_password}, and the original password is {original_password}.')
             print('')
             continue
 
